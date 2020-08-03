@@ -1,0 +1,11 @@
+development:
+  adapter: postgresql
+  database: sample_cms_dev
+  pool: 5
+  timeout: 5000
+
+test:
+  adapter: postgresql
+  database: sample_cms_test
+  pool: 5
+  timeout: 5000
