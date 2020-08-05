@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin</title>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi, user-scalable=no" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="<%= asset_path 'favicon-32x32.png' %>" sizes="32x32">
+  <link rel="icon" type="image/png" href="<%= asset_path 'favicon-16x16.png' %>" sizes="16x16">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= stylesheet_link_tag    'admin/admin_application', media: 'all' %>
+  <%= javascript_include_tag 'admin/admin_application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body data-locale="<%= I18n.locale %>">
+<div id="wrapper">
+  <div class="page-container">
+    <div id='sidebar'><%= render 'admin/shared/sidebar' %></div>
+    <div id='content' class='container'><%= yield %></div>
+  </div>
+</div>
+</body>
+</html>

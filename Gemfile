@@ -11,6 +11,7 @@ gem 'pg'
 
 # frontend
 gem 'sass-rails', '>= 6'
+gem 'bootstrap'
 
 # backend
 gem 'devise'
