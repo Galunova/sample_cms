@@ -1,0 +1,24 @@
+<h1>All Templates</h1>
+
+<p>
+  <%= link_to 'New Template', new_admin_template_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>URL</th>
+  </tr>
+
+  <% @templates.each do |template| %>
+      <tr>
+        <td><%= template.title %></td>
+        <td>
+          <%= template.content %>
+        </td>
+        <td><%= link_to 'Edit', edit_admin_template_path(template.id) %></td>
+        <td><%= link_to 'Destroy', admin_template_path(template.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>
