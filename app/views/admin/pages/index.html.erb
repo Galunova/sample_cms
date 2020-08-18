@@ -1,0 +1,24 @@
+<h1>All Pages</h1>
+
+<p>
+  <%= link_to 'New Page', new_admin_page_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Slug</th>
+    <th>Content</th>
+    <th>URL</th>
+  </tr>
+
+  <% @pages.each do |page| %>
+      <tr>
+        <td><%= page.slug %></td>
+        <td>
+          <%= page.content %>
+        </td>
+        <td><%= link_to 'Edit', edit_admin_page_path(page.id) %></td>
+        <td><%= link_to 'Destroy', admin_page_path(page.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>
