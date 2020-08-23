@@ -1,5 +1,6 @@
 class Admin::PagesController < Admin::BaseController
   before_action :fetch_page, only: [:edit, :update, :destroy]
+  before_action :fetch_templates, only: [:new, :create, :edit, :update]
 
   def index
     @pages = Page.all
@@ -37,12 +38,16 @@ class Admin::PagesController < Admin::BaseController
     end
   end
 
+  def fetch_templates
+    @templates = Template.all
+  end
+
   private
   def fetch_page
     @page = Page.find(params[:id])
   end
 
   def page_params
-    params.require(:page).permit(:slug, :content)
+    params.require(:page).permit(:slug, :content, :index_template_id)
   end
 end

@@ -16,8 +16,13 @@
     </p>
 
     <p>
-      <%= f.label :text %><br/>
+      <%= f.label :content %><br/>
       <%= f.text_area :content %>
+    </p>
+
+    <p>
+      <%= f.label :template %><br />
+      <%= f.collection_select :index_template_id, @templates, :id, :title %>
     </p>
 
     <p>
